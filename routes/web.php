@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,8 @@ Route::middleware('auth')->group(function () {
 });
 Route::middleware(['auth', 'isAdmin'])->group(function () {
    Route::resource('admin/categories',CategoryController::class);
+   Route::resource('admin/products', ProductController::class);
+
 });
 
 
